@@ -1,0 +1,2 @@
+
+SELECT HEX(UUID_TO_BIN('6ccd780c-baba-1026-9564-5b8c656024db'));

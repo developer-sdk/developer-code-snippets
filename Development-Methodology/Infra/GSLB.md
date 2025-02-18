@@ -85,3 +85,6 @@ GSLB는 여러 가지 정책을 이용해 트래픽을 분산할 수 있어.
 - 다양한 부하 분산 정책을 활용하여 최적의 사용자 경험 제공.
 
 혹시 더 궁금한 점 있어? 😊
+
+# 참고 
+- [삼성 SDS GSLB](https://www.samsungsds.com/kr/network-gslb/gslb.html)

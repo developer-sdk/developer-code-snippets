@@ -5,4 +5,9 @@
 
 ```bash
 git checkout tags/1.0.2 -b 1.0.2
+
+git checkout tags/apache-iceberg-1.7.1 -b apache-iceberg-1.7.1
+
+git checkout tags/v0.8.0-incubating -b v0.8.0-incubating
+
 ```

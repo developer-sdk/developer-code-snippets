@@ -1,3 +1,5 @@
+Probe 를 사용하면 
+
 probe 를 이용해서 상태를 점검할 수 없다.
 
 Kubernetes(K8s)에서 **Liveness Probe**와 **Readiness Probe**는 컨테이너의 상태를 체크하여 애플리케이션의 신뢰성을 높이는 데 사용된다. 각각의 역할과 설정 방법을 알아보자.

@@ -16,4 +16,8 @@
 wget https://eclipse.c3sl.ufpr.br/temurin-compliance/temurin/21/jdk-21.0.2+13/OpenJDK21U-jdk_x64_linux_hotspot_21.0.2_13.tar.gz
 tar zxf OpenJDK21U-jdk_x64_linux_hotspot_21.0.2_13.tar.gz
 export JAVA_HOME=/home/ubuntu/jdk-21.0.2+13
+
+wget https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.2%2B13/OpenJDK21U-jdk_x64_linux_hotspot_21.0.2_13.tar.gz
+tar zxf OpenJDK21U-jdk_x64_linux_hotspot_21.0.2_13.tar.gz
+export JAVA_HOME=/home/ubuntu/catalog/jdk-21.0.2+13
 ```

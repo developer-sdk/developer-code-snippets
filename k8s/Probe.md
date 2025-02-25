@@ -1,4 +1,35 @@
-Probe 를 사용하면 
+Probe는 컨테이너에서 kubelet에 의해 주기적으로 수행되는 진단이다. 이 Probe를 통해 쿠버네티스는 각 컨테이너의 상태를 주기적으로 체크한 후, 문제가 있는 컨테이너를 자동으로 재시작하거나 또는 문제가 있는 컨테이너를 서비스에서 제외할 수 있다.
+kubelet은 컨테이너의 상태를 진단하기 위해 핸들러를 호출하는데 핸들러는 수행하는 작업의 분류에 따라서 ExecAction, TCPSocketAction, HttpGetAction로 나뉜다.
+
+# Handler
+ExecAction
+ExecAction은 컨테이너에서 지정된 명령어를 실행한다. 명령어를 실행했을 때 exit code가 0이면 성공, 이외의 값은 실패로 분류한다.
+```yaml
+exec:
+   command:
+   - cat
+   - /etc/nginx/nginx.conf
+```
+
+TCPAction
+TCPAction은 지정된 포트로 TCP 소켓 연결을 시도한다.
+```yaml
+tcpSocket:
+    port: 8080
+    initialDelaySeconds: 15
+    periodSeconds: 20
+```
+
+
+HttpGetAction
+지정된 포트와 url로 HTTP Get 요청을 전송하며, 응답 상태가 200 ~ 400 구간에 속하는 경우 성공, 이외에는 실패로 분류한다.
+
+```yaml
+ httpGet:
+    path: /healthz
+    port: liveness-port
+```
+
 
 probe 를 이용해서 상태를 점검할 수 없다.
 
@@ -89,3 +120,7 @@ startupProbe:
 ---
 
 이제 Kubernetes에서 Liveness, Readiness Probe를 설정하여 더욱 안정적인 서비스를 운영할 수 있다! 🚀
+
+
+# 참고 
++ [ReadinessProbe, LivenessProbe(Pod)](https://jangcenter.tistory.com/112)
